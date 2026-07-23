@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estabelecimentos</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="menu">
+
+        <h2>GuiaComercial</h2>
+
+        <a href="dashboard.html">🏠 Dashboard</a>
+
+        <a href="categorias.html">📂 Categorias</a>
+
+        <a href="estabelecimentos.html">🏢 Estabelecimentos</a>
+
+        <button id="btnSair">Sair</button>
+
+    </aside>
+
+    <main class="conteudo">
+
+        <h1>Cadastro de Estabelecimentos</h1>
+
+        <h3>Informações Básicas</h3>
+
+        <select id="categoria">
+            <option value="">Selecione a categoria</option>
+        </select>
+
+        <input
+            type="text"
+            id="nomeEstabelecimento"
+            placeholder="Nome do estabelecimento">
+
+        <textarea
+            id="descricao"
+            placeholder="Descrição"
+            rows="4"></textarea>
+
+        <h3>Contato</h3>
+
+        <input
+            type="text"
+            id="telefone"
+            placeholder="Telefone">
+
+        <input
+            type="text"
+            id="whatsapp"
+            placeholder="WhatsApp">
+
+        <h3>Endereço</h3>
+
+        <input
+            type="text"
+            id="endereco"
+            placeholder="Endereço">
+
+        <input
+            type="text"
+            id="bairro"
+            placeholder="Bairro">
+
+        <input
+            type="text"
+            id="cidade"
+            placeholder="Cidade">
+
+        <input
+            type="text"
+            id="mapa"
+            placeholder="Link Google Maps">
+
+        <h3>Internet</h3>
+
+        <input
+            type="text"
+            id="site"
+            placeholder="Site">
+
+        <input
+            type="text"
+            id="instagram"
+            placeholder="Instagram">
+
+        <input
+            type="text"
+            id="facebook"
+            placeholder="Facebook">
+
+        <h3>Funcionamento</h3>
+
+        <textarea
+            id="horario"
+            rows="4"
+            placeholder="Horário de Funcionamento"></textarea>
+
+        <h3>Imagem</h3>
+
+        <input
+            type="file"
+            id="foto"
+            accept="image/*">
+
+        <br><br>
+
+        <img
+            id="previewFoto"
+            src=""
+            alt="Preview"
+            style="display:none;max-width:220px;border-radius:8px;">
+
+        <br><br>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="ativo"
+                checked>
+
+            Ativo
+
+        </label>
+
+        <br><br>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="destaque">
+
+            Estabelecimento em Destaque
+
+        </label>
+
+        <br><br>
+
+        <button id="btnSalvar">
+
+            Salvar Estabelecimento
+
+        </button>
+
+        <hr>
+
+        <div id="listaEstabelecimentos"></div>
+
+    </main>
+
+</div>
+
+<script type="module" src="../js/estabelecimentos.js"></script>
+
+</body>
+
+</html>

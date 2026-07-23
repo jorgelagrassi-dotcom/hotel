@@ -1,0 +1,1068 @@
+/*==================================================
+GUIA COMERCIAL
+STYLE.CSS
+PARTE 1/4
+RESET + CORES + HEADER + PESQUISA + CATEGORIAS
+==================================================*/
+
+/*==================================================
+VARIÁVEIS
+==================================================*/
+
+:root{
+
+    --laranja:#F97316;
+    --laranja-hover:#EA580C;
+
+    --verde:#556B2F;
+    --verde-hover:#475C26;
+
+    --fundo:#F8F8F8;
+    --card:#FFFFFF;
+
+    --texto:#222222;
+    --texto-sec:#6B7280;
+
+    --borda:#ECECEC;
+
+    --shadow:0 8px 25px rgba(0,0,0,.08);
+
+    --radius:22px;
+
+}
+
+/*==================================================
+RESET
+==================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:var(--fundo);
+
+    color:var(--texto);
+
+    min-height:100vh;
+
+}
+
+/*==================================================
+LINKS
+==================================================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    font-family:inherit;
+
+}
+
+/*==================================================
+TOPO
+==================================================*/
+
+.topo{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:linear-gradient(
+        180deg,
+        #3F563C 0%,
+        #2F4333 100%
+    );
+
+    padding:18px;
+
+    border-bottom:none;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+}
+
+/*==================================================
+LOGO
+==================================================*/
+
+.logo{
+
+    margin-bottom:14px;
+
+}
+
+.logo h1{
+
+    color:#FFFFFF;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.logo span{
+
+    color:rgba(255,255,255,.85);
+
+    font-size:13px;
+
+}
+
+/*==================================================
+PESQUISA
+==================================================*/
+
+.pesquisa{
+
+    width:100%;
+
+}
+
+#txtPesquisa{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    outline:none;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    padding:0 18px;
+
+    font-size:16px;
+
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+
+    transition:.25s;
+
+}
+
+#txtPesquisa::placeholder{
+
+    color:#A1A1AA;
+
+}
+
+#txtPesquisa:focus{
+
+    box-shadow:
+
+        0 0 0 3px rgba(249,115,22,.18),
+
+        0 5px 20px rgba(0,0,0,.08);
+
+}
+
+/*==================================================
+CONTEÚDO
+==================================================*/
+
+main{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:16px;
+
+}
+
+/*==================================================
+MENU CATEGORIAS
+==================================================*/
+
+#menuCategorias{
+
+    display:flex;
+
+    gap:10px;
+
+    overflow-x:auto;
+
+    padding:4px 2px 18px;
+
+    scrollbar-width:none;
+
+}
+
+#menuCategorias::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+/*==================================================
+BOTÕES DAS CATEGORIAS
+==================================================*/
+
+.categoria-btn{
+
+    border:none;
+
+    background:#FFFFFF;
+
+    color:var(--verde);
+
+    padding:11px 18px;
+
+    border-radius:999px;
+
+    white-space:nowrap;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+
+    transition:.25s;
+
+}
+
+.categoria-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.categoria-btn.ativo{
+
+    background:var(--laranja);
+
+    color:#FFFFFF;
+
+}
+
+/*==================================================
+LISTA
+==================================================*/
+
+#listaEstabelecimentos{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+}
+
+/*==================================================
+PARTE 2/4
+CARDS
+==================================================*/
+
+.card{
+
+    background:var(--card);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.30s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+/*==================================================
+IMAGEM
+==================================================*/
+
+.card-imagem{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.foto-estabelecimento{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.45s;
+
+}
+
+.card:hover .foto-estabelecimento{
+
+    transform:scale(1.05);
+
+}
+
+/*==================================================
+SEM FOTO
+==================================================*/
+
+.sem-foto{
+
+    width:100%;
+
+    height:220px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#EEEEEE;
+
+    color:#999999;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+CONTEÚDO
+==================================================*/
+
+.card-conteudo{
+
+    padding:20px;
+
+}
+
+/*==================================================
+NOME
+==================================================*/
+
+.card-conteudo h2{
+
+    font-size:22px;
+
+    color:var(--texto);
+
+    margin-bottom:14px;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+}
+
+/*==================================================
+DESCRIÇÃO
+==================================================*/
+
+.descricao{
+
+    color:var(--texto-sec);
+
+    line-height:24px;
+
+    margin-bottom:20px;
+
+    display:-webkit-box;
+
+    -webkit-box-orient:vertical;
+
+    -webkit-line-clamp:2;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+TEXTOS AUXILIARES
+==================================================*/
+
+.card p{
+
+    color:var(--texto-sec);
+
+    line-height:24px;
+
+    margin-bottom:10px;
+
+}
+
+.card strong{
+
+    color:var(--texto);
+
+}
+
+/*==================================================
+LINKS
+==================================================*/
+
+.card a{
+
+    color:inherit;
+
+}
+
+/*==================================================
+EFEITO MOBILE
+==================================================*/
+
+.card:active{
+
+    transform:scale(.98);
+
+}
+
+/*==================================================
+PARTE 3/4
+BADGES + BOTÕES + MODAL
+==================================================*/
+
+/*==================================================
+BADGES
+==================================================*/
+
+.badges{
+
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:18px;
+
+}
+
+.badge{
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.6px;
+
+}
+
+.badge.categoria{
+
+    background:var(--verde);
+
+    color:#FFFFFF;
+
+}
+
+.badge.cidade{
+
+    background:#F3F4F6;
+
+    color:var(--texto-sec);
+
+}
+
+/*==================================================
+BOTÕES
+==================================================*/
+
+.acoes{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.btn{
+
+    flex:1;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+/*==================================================
+BOTÃO CONTATO
+==================================================*/
+
+.btn-laranja{
+
+    background:var(--laranja);
+
+    color:#FFFFFF;
+
+}
+
+.btn-laranja:hover{
+
+    background:var(--laranja-hover);
+
+}
+
+/*==================================================
+BOTÃO DETALHES
+==================================================*/
+
+.btn-verde{
+
+    background:#FFFFFF;
+
+    color:var(--verde);
+
+    border:2px solid var(--verde);
+
+}
+
+.btn-verde:hover{
+
+    background:var(--verde);
+
+    color:#FFFFFF;
+
+}
+
+/*==================================================
+MODAL
+==================================================*/
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:99999;
+
+}
+
+.modal.ativo{
+
+    display:flex;
+
+    animation:fade .25s;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*==================================================
+CAIXA
+==================================================*/
+
+.modal-box{
+
+    width:100%;
+
+    max-width:700px;
+
+    max-height:92vh;
+
+    overflow:auto;
+
+    background:#FFFFFF;
+
+    border-radius:24px 24px 0 0;
+
+    position:relative;
+
+    animation:subir .30s ease;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        transform:translateY(80px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+/*==================================================
+IMAGEM
+==================================================*/
+
+.modal-box img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+/*==================================================
+CONTEÚDO
+==================================================*/
+
+.modal-info{
+
+    padding:22px;
+
+}
+
+.modal-info h2{
+
+    font-size:28px;
+
+    color:var(--texto);
+
+    margin-bottom:18px;
+
+}
+
+.modal-info p{
+
+    color:var(--texto-sec);
+
+    line-height:25px;
+
+    margin-bottom:12px;
+
+}
+
+/*==================================================
+BOTÃO FECHAR
+==================================================*/
+
+.fecharModal{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+    color:#555;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.18);
+
+    transition:.25s;
+
+}
+
+.fecharModal:hover{
+
+    transform:rotate(90deg);
+
+}
+
+/*==================================================
+PARTE 4/4
+RESPONSIVO + ANIMAÇÕES + ACABAMENTO
+==================================================*/
+
+/*==================================================
+ANIMAÇÕES
+==================================================*/
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.card{
+
+    animation:aparecer .35s ease;
+
+}
+
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+    height:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#F1F1F1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#CCCCCC;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#AAAAAA;
+
+}
+
+/*==================================================
+TABLETS
+==================================================*/
+
+@media (min-width:768px){
+
+    main{
+
+        padding:20px;
+
+    }
+
+    #listaEstabelecimentos{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:22px;
+
+    }
+
+    .foto-estabelecimento,
+    .sem-foto{
+
+        height:230px;
+
+    }
+
+}
+
+/*==================================================
+DESKTOP
+==================================================*/
+
+@media (min-width:1200px){
+
+    #listaEstabelecimentos{
+
+        grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+
+        gap:26px;
+
+    }
+
+}
+
+/*==================================================
+MOBILE
+==================================================*/
+
+@media (max-width:767px){
+
+    .topo{
+
+        padding:14px;
+
+    }
+
+    .logo h1{
+
+        font-size:24px;
+
+    }
+
+    .logo span{
+
+        font-size:12px;
+
+    }
+
+    main{
+
+        padding:12px;
+
+    }
+
+    #txtPesquisa{
+
+        height:50px;
+
+        font-size:15px;
+
+    }
+
+    .categoria-btn{
+
+        padding:10px 16px;
+
+        font-size:13px;
+
+    }
+
+    .foto-estabelecimento,
+    .sem-foto{
+
+        height:210px;
+
+    }
+
+    .card-conteudo{
+
+        padding:18px;
+
+    }
+
+    .card-conteudo h2{
+
+        font-size:20px;
+
+    }
+
+    .descricao{
+
+        font-size:14px;
+
+        line-height:22px;
+
+    }
+
+    .acoes{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        height:50px;
+
+    }
+
+    .modal-box{
+
+        max-width:100%;
+
+        border-radius:24px 24px 0 0;
+
+    }
+
+    .modal-box img{
+
+        height:220px;
+
+    }
+
+    .modal-info{
+
+        padding:18px;
+
+    }
+
+    .modal-info h2{
+
+        font-size:24px;
+
+    }
+
+}
+
+/*==================================================
+TELAS MUITO PEQUENAS
+==================================================*/
+
+@media (max-width:380px){
+
+    .logo h1{
+
+        font-size:21px;
+
+    }
+
+    .categoria-btn{
+
+        padding:9px 14px;
+
+        font-size:12px;
+
+    }
+
+    .card-conteudo{
+
+        padding:16px;
+
+    }
+
+    .card-conteudo h2{
+
+        font-size:18px;
+
+    }
+
+    .btn{
+
+        font-size:14px;
+
+    }
+
+}
+
+/*==================================================
+FOCUS ACESSIBILIDADE
+==================================================*/
+
+button:focus,
+a:focus,
+input:focus{
+
+    outline:none;
+
+}
+
+/*==================================================
+SELEÇÃO DE TEXTO
+==================================================*/
+
+::selection{
+
+    background:var(--laranja);
+
+    color:#FFFFFF;
+
+}

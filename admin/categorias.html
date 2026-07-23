@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Categorias | GuiaComercial</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="menu">
+
+            <h2>GuiaComercial</h2>
+
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="categorias.html">📂 Categorias</a>
+            <a href="estabelecimentos.html">🏢 Estabelecimentos</a>
+
+            <button id="btnSair">Sair</button>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <h1>Gerenciamento de Categorias</h1>
+
+            <div class="card">
+
+                <input
+                    type="text"
+                    id="nomeCategoria"
+                    placeholder="Digite o nome da categoria">
+
+                <button id="btnSalvar">
+                    Salvar Categoria
+                </button>
+
+                <button
+                    id="btnCancelar"
+                    style="display:none;">
+                    Cancelar Edição
+                </button>
+
+            </div>
+
+            <hr>
+
+            <h2>Lista de Categorias</h2>
+
+            <div id="listaCategorias"></div>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="../js/categorias.js"></script>
+
+</body>
+
+</html>

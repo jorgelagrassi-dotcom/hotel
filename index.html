@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guia Comercial</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- TOPO -->
+    <header class="topo">
+
+        <div class="logo">
+
+            <h1>Guia Comercial</h1>
+
+            <span>Encontre o que precisa perto de você</span>
+
+        </div>
+
+        <div class="pesquisa">
+
+            <input
+                type="text"
+                id="txtPesquisa"
+                placeholder="Pesquisar estabelecimentos...">
+
+        </div>
+
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main>
+
+        <!-- MENU DAS CATEGORIAS -->
+        <section id="menuCategorias"></section>
+
+        <!-- LISTA DOS ESTABELECIMENTOS -->
+        <section id="listaEstabelecimentos">
+
+            <p>Carregando estabelecimentos...</p>
+
+        </section>
+
+    </main>
+<!-- MODAL -->
+
+<div id="modalEmpresa" class="modal">
+
+    <div class="modal-box">
+
+        <button id="fecharModal" class="fecharModal">
+            ×
+        </button>
+
+        <div id="conteudoModal"></div>
+
+    </div>
+
+</div>
+    <script type="module" src="js/index.js"></script>
+
+</body>
+
+</html>
