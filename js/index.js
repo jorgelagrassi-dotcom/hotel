@@ -25,6 +25,38 @@ let estabelecimentos = [];
 let categoriaSelecionada = "todas";
 
 //==================================
+// WHATSAPP
+//==================================
+
+function numeroWhatsApp(numero) {
+
+    const digits = String(numero || "").replace(/\D/g, "");
+
+    // Se o cadastro já tiver o código do Brasil, mantém.
+    if (digits.startsWith("55") && digits.length >= 12) {
+        return digits;
+    }
+
+    // Para números brasileiros cadastrados sem +55.
+    if (digits.length === 10 || digits.length === 11) {
+        return "55" + digits;
+    }
+
+    return digits;
+
+}
+
+function linkWhatsApp(numero) {
+
+    const numeroFormatado = numeroWhatsApp(numero);
+
+    const mensagem = "Olá! Vi você pelo aplicativo Guia Comercial. Quero saber mais informações.";
+
+    return `https://wa.me/${numeroFormatado}?text=${encodeURIComponent(mensagem)}`;
+
+}
+
+//==================================
 // CARREGAR CATEGORIAS
 //==================================
 
@@ -242,8 +274,9 @@ function mostrarEstabelecimentos() {
                             ? `
                             <a
                                 class="btn btn-laranja"
-                                href="https://wa.me/${(est.whatsapp || "").replace(/\D/g,"")}"
-                                target="_blank">
+                                href="${linkWhatsApp(est.whatsapp)}"
+                                target="_blank"
+                                rel="noopener noreferrer">
 
                                 Entrar em contato
 
@@ -298,7 +331,21 @@ function mostrarEstabelecimentos() {
         
                     ${
                         est.whatsapp
-                        ? `<p><strong>WhatsApp:</strong> ${est.whatsapp}</p>`
+                        ? `
+                            <p>
+                                <strong>WhatsApp:</strong> ${est.whatsapp}
+                            </p>
+
+                            <p>
+                                <a
+                                    class="btn btn-laranja"
+                                    href="${linkWhatsApp(est.whatsapp)}"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    Abrir WhatsApp
+                                </a>
+                            </p>
+                        `
                         : ""
                     }
         
