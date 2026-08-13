@@ -274,14 +274,12 @@ LISTA
 ==================================================*/
 
 #listaEstabelecimentos{
-
     display:grid;
-
     grid-template-columns:1fr;
-
     gap:18px;
-
 }
+
+
 
 /*==================================================
 PARTE 2/4
@@ -934,30 +932,54 @@ MOBILE
 
     }
 
+    /* 2 cards por linha no celular */
+
+    #listaEstabelecimentos{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:10px;
+
+    }
+
     .foto-estabelecimento,
     .sem-foto{
 
-        height:210px;
+        height:130px;
 
     }
 
     .card-conteudo{
 
-        padding:18px;
+        padding:10px;
 
     }
 
     .card-conteudo h2{
 
-        font-size:20px;
+        font-size:15px;
+
+        margin-bottom:8px;
+
+    }
+
+    .card p{
+
+        font-size:12px;
+
+        line-height:18px;
+
+        margin-bottom:6px;
 
     }
 
     .descricao{
 
-        font-size:14px;
+        font-size:12px;
 
-        line-height:22px;
+        line-height:18px;
+
+        margin-bottom:10px;
 
     }
 
